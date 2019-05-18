@@ -481,6 +481,11 @@ term bif_erlang_greater_than_2(Context *ctx, term arg1, term arg2)
     UNUSED(ctx);
 
     //TODO: fix this implementation, it needs to cover more types
+    if (UNLIKELY(!(term_is_integer(arg1) && term_is_integer(arg2)))) {
+        abort();
+    }
+
+    //TODO: fix this implementation, it needs to cover more types
     if (term_to_int32(arg1) > term_to_int32(arg2)) {
         return TRUE_ATOM;
     } else {
@@ -491,6 +496,11 @@ term bif_erlang_greater_than_2(Context *ctx, term arg1, term arg2)
 term bif_erlang_less_than_2(Context *ctx, term arg1, term arg2)
 {
     UNUSED(ctx);
+
+    //TODO: fix this implementation, it needs to cover more types
+    if (UNLIKELY(!(term_is_integer(arg1) && term_is_integer(arg2)))) {
+        abort();
+    }
 
     //TODO: fix this implementation, it needs to cover more types
     if (term_to_int32(arg1) < term_to_int32(arg2)) {
@@ -505,6 +515,11 @@ term bif_erlang_less_than_or_equal_2(Context *ctx, term arg1, term arg2)
     UNUSED(ctx);
 
     //TODO: fix this implementation, it needs to cover more types
+    if (UNLIKELY(!(term_is_integer(arg1) && term_is_integer(arg2)))) {
+        abort();
+    }
+
+    //TODO: fix this implementation, it needs to cover more types
     if (term_to_int32(arg1) <= term_to_int32(arg2)) {
         return TRUE_ATOM;
     } else {
@@ -515,6 +530,11 @@ term bif_erlang_less_than_or_equal_2(Context *ctx, term arg1, term arg2)
 term bif_erlang_greater_than_or_equal_2(Context *ctx, term arg1, term arg2)
 {
     UNUSED(ctx);
+
+    //TODO: fix this implementation, it needs to cover more types
+    if (UNLIKELY(!(term_is_integer(arg1) && term_is_integer(arg2)))) {
+        abort();
+    }
 
     //TODO: fix this implementation, it needs to cover more types
     if (term_to_int32(arg1) >= term_to_int32(arg2)) {
