@@ -48,6 +48,8 @@
 
 #define BINARY_HEADER_SIZE 2
 
+#define TERM_DEBUG_ASSERT(...)
+
 /**
  * @brief Gets a pointer to a term stored on the heap
  *
@@ -381,14 +383,9 @@ static inline term term_from_atom_index(int atom_index)
  */
 static inline int32_t term_to_int32(term t)
 {
-    switch (t & 0xF) {
-        case 0xF:
-            return ((int32_t) t) >> 4;
+    TERM_DEBUG_ASSERT(term_is_integer(t));
 
-        default:
-            printf("term is not an integer: %lx\n", t);
-            return 0;
-    }
+    return ((int32_t) t) >> 4;
 }
 
 static inline int term_to_catch_label_and_module(term t, int *module_index)
